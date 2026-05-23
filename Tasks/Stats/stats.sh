@@ -16,11 +16,11 @@ display_stats() {
     echo "╔══════════════════════════════╗"
     echo "║       PLAYER  STATS          ║"
     echo "╠══════════════════════════════╣"
-    printf "║  LVL: %d        XP: %d/%d       ║\n" "lvl" "current_xp" "max_xp"
-    printf "║  HP : %d/%d                    ║\n" "current_hp" "max_hp"
-    printf "║  NRG: %d/%d                    ║\n" "current_nrg" "max_nrg"
-    printf "║  ATK: %d        DEF: %d        ║\n" "atk" "def"
-    printf "║  SPD: %d        LCK: %d%%       ║\n" "spd" "lck"
+    printf "║  LVL: %d        XP: %d/%d       ║\n" "$lvl" "$current_xp" "$max_xp"
+    printf "║  HP : %d/%d                    ║\n" "$current_hp" "$max_hp"
+    printf "║  NRG: %d/%d                    ║\n" "$current_nrg" "$max_nrg"
+    printf "║  ATK: %d        DEF: %d        ║\n" "$atk" "$def"
+    printf "║  SPD: %d        LCK: %d%%       ║\n" "$spd" "$lck"
     echo "╚══════════════════════════════╝"
 }
 
