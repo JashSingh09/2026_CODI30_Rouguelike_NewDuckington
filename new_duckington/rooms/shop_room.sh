@@ -1,15 +1,5 @@
 #!/bin/bash
 
-
-echo "The Shop..."
-
-
-
-
-
-printf "What do you want to do"
-
-
 # Regular colours
 BLACK='\033[0;30m'
 RED='\033[0;31m'
@@ -26,3 +16,15 @@ BROWN='\033[0;33m'   # terminals fake brown using dark yellow/orange
 
 # Reset colour
 NC='\033[0m'
+
+
+
+echo -e "${RED}===================${NC}"
+echo -e "${CYAN}The Shop...${NC}"
+echo -e "${RED}===================${NC}"
+
+echo 
+echo
+
+
+printf "What do you want to do"
