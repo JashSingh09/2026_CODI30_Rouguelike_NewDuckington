@@ -3,6 +3,7 @@
 export GAME_ROOT="$(dirname "$0")/.."
 source "$GAME_ROOT/system/stats.sh"
 source "$GAME_ROOT/data/enemies/ememy_example.sh"
+source "$GAME_ROOT/screens/lose_screen.sh"
 
 load_player_data
 
@@ -92,17 +93,28 @@ while [[ $battle_end == false ]]; do
 
 
 	    echo -e "${RED}$ENEMY_NAME has used ${ENEMY_ATK_NAME:-"claw"}${NC}"
+
 	    DAMAGE_TAKEN=$(($ENEMY_ATK-$PLAYER_DEF))
 
 	    echo -e "you have taken $DAMAGE_TAKEN damage"
-	    PLAYER_HP=$(($PLAYER_HP-$DAMAGE_TAKEN))
+	    PLAYER_HP=$(($PLAYER_HP-$DAMAGE_TAKEN-999))
 
-	    echo "You now have $PLAYER_HP HP"
+		if [[ $PLAYER_HP -lt 1 ]]; then
+	    	PLAYER_HP=0
+		fi
 
+	   	echo "You now have $PLAYER_HP HP remaining"
 	    read hi
 	    player_turn=true
 
+	    if [[ $PLAYER_HP == 0 ]]; then
+	    	battle_end=true
+	    	lose_screen
+	    fi	
+	    
+
 	    break
+	    
 	done
 
 done
