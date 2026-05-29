@@ -30,43 +30,54 @@ shop() {
 	echo 
 	echo
 	while true; do
-		printf "What do you want to do"
+		printf "What Do You Want To buy?"
 		echo
 		echo "-------------------"
 		echo -e "${YELLOW}[1]  Buy $item1${NC}" 
 		echo -e "${GREEN}[2]  Buy $item2${NC}"
-		echo -e "${BLUE}[4]  Buy $item3${NC}"
+		echo -e "${BLUE}[3]  Buy $item3${NC}"
 		echo -e "${PINK}[4]  Buy $item4${NC}"
 		echo -e "${RED}[5]  EXIT SHOP${NC}"
 		read shop_action
 		case $shop_action in
 			
 			1)
-				PLAYER_ITEMS+=($item1)
-				echo ${PLAYER_ITEMS[@]}
+				PLAYER_ITEMS+=("$item1")
+				sleep 1
+				echo "bought ${PLAYER_ITEMS[-1]}"
+				sleep 1
 				;;
 			
 			2)
-				PLAYER_ITEMS+=($item2)
-				echo ${PLAYER_ITEMS[@]}
+				PLAYER_ITEMS+=("$item2")
+				sleep 1
+				echo "bought ${PLAYER_ITEMS[-1]}"
+				sleep 1
 				;;
 			
 			
 			3)	
-				PLAYER_ITEMS+=($item3)
-				echo ${PLAYER_ITEMS[@]}
+				PLAYER_ITEMS+=("$item3")
+				sleep 1
+				echo  "bought ${PLAYER_ITEMS[-1]}"
+				sleep 1
 				;;
 			
 			4)
-				PLAYER_ITEMS+=($item4)
-				echo ${PLAYER_ITEMS[@]}
+				PLAYER_ITEMS+=("$item4")
+				sleep 1
+				echo "bought ${PLAYER_ITEMS[-1]}"
+				sleep 1
 				;;
 			
 			5)	
 				break
-
 				;;
-			*) 
+			*)  
+				sleep 1
+				echo "Invalid Option,"
+				echo "Please Try Again"
+				sleep 1
 
 				;;
 
@@ -78,7 +89,7 @@ shop() {
 
 
 
-item1=placeholder_item  # work on this later
+# item1=placeholder_item  # work on this later
 
 
 
